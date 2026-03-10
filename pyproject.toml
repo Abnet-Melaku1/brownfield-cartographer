@@ -1,0 +1,17 @@
+[project]
+name = "cartographer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "langchain>=1.2.11",
+    "langgraph>=1.1.0",
+    "networkx>=3.6.1",
+    "pydantic>=2.12.5",
+    "sqlglot>=29.0.1",
+    "tree-sitter>=0.25.2",
+    "tree-sitter-python>=0.25.0",
+    "tree-sitter-sql>=0.3.11",
+    "tree-sitter-yaml>=0.7.2",
+]
