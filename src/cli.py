@@ -1,5 +1,13 @@
 import argparse
 import sys
+import io
+
+# Ensure UTF-8 output on Windows terminals that default to cp1252
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from src.orchestrator import Orchestrator
 
 def main():
@@ -32,7 +40,7 @@ def main():
             orchestrator = Orchestrator(output_dir=args.output)
             orchestrator.run_analysis(args.path)
         except Exception as e:
-            print(f"❌ Analysis failed: {e}")
+            print(f"[ERROR] Analysis failed: {e}")
             sys.exit(1)
     else:
         parser.print_help()

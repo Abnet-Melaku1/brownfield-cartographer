@@ -15,6 +15,8 @@ class ModuleNode(BaseModel):
     change_velocity_30d: Optional[int] = None
     is_dead_code_candidate: bool = False
     last_modified: Optional[str] = None
+    public_functions: List[str] = Field(default_factory=list)
+    public_classes: List[str] = Field(default_factory=list)
 
 class DatasetNode(BaseModel):
     """Represents a dataset, table, or stream."""
